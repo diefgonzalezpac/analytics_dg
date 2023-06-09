@@ -14,7 +14,8 @@ from plotly.subplots import make_subplots
 # Incorporate data
 # power_bi_data = pd.read_excel('Power_bi_data\Clean_Total_power_BI_data.xlsx')
 #power_bi_data = pd.read_csv('Power_bi_data\Total_insights_page_data.csv')
-power_bi_data = pd.read_csv('Power_bi_data\Total_insights_page_data_nonan.csv')
+# power_bi_data = pd.read_csv('Power_bi_data\Total_insights_page_data_nonan.csv')
+power_bi_data = pd.read_parquet('Power_bi_data\Total_insights_page_data_nonan.parquet',engine='fastparquet')
 power_bi_data["Engine_cycles_general_percentage"] = power_bi_data["Total Pages"]*0.0002
 power_bi_data["Engine_cycles_model_percentage"] = (power_bi_data["Total Pages"] * 100) / power_bi_data["Limit"]
 power_bi_data["Engine_cycles_model_percentage"] = power_bi_data["Engine_cycles_model_percentage"].replace([np.nan,np.inf,-np.inf], 0)
