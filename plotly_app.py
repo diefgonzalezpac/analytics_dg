@@ -155,6 +155,7 @@ def pie_fig(df_model:pd.DataFrame):
 # Initialize the app
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = Dash(__name__,external_stylesheets=[dbc.themes.BOOTSTRAP])
+server = app.server
 
 # app = Dash(__name__)
 
